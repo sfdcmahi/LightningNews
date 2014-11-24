@@ -2,14 +2,11 @@ public class NewsComponentController {
 	@AuraEnabled
     public static List<News> getNews() {
         System.debug('getNews Called');
-        String response = getRestResponse('http://api.feedzilla.com/v1/articles/search.json?q=Salesforce&count=5');
+        String response = getRestResponse('http://api.feedzilla.com/v1/articles/search.json?q=Salesforce%20Lightning&count=5');
         
 		NewsFeed feed = (NewsFeed)JSON.deserialize(response,NewsFeed.class);
         
         List<News> articles = feed.articles;
-        
-        System.debug('THESE ARE THE ARTICLES');
-        System.debug(articles[0].title);
         
         return articles;
     }
