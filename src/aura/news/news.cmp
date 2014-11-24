@@ -1,0 +1,14 @@
+<aura:component controller="lightningtom.NewsComponentController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="newsList" type="lightningtom.News[]"/>
+    
+	<div class="row">
+		<div class="alert alert-success">
+            <aura:iteration items="{!v.newsList}" var="newsItem">
+                <p class="title">{!newsItem.title}</p>
+                <p>{!newsItem.summary}</p>
+            </aura:iteration> 
+		</div>	
+    </div>
+    
+</aura:component>
