@@ -1,4 +1,4 @@
-<aura:component controller="lightningtom.NewsComponentController">
+<aura:component controller="lightningtom.NewsComponentController" implements="force:appHostable">
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <aura:attribute name="newsList" type="lightningtom.News[]"/>
     
